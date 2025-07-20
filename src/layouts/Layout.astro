@@ -8,13 +8,6 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="es">
 	<head>
-		<script is:inline>
-			const ls = localStorage.getItem('theme');
-			const useDark =
-				ls === 'dark' ||
-				(!ls && window.matchMedia('(prefers-color-scheme: dark)').matches);
-			document.documentElement.classList.toggle('dark', useDark);
-		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
@@ -32,7 +25,7 @@ const { title, description } = Astro.props;
 
 <style is:global>
 	:root{
-		color-scheme:dark light;
+		color-scheme:light;
 	}
 
 	body{
