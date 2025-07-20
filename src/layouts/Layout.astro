@@ -1,0 +1,47 @@
+---
+import "@fontsource-variable/onest"
+import Header from "../components/Header.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<script is:inline>
+			const ls = localStorage.getItem('theme');
+			const useDark =
+				ls === 'dark' ||
+				(!ls && window.matchMedia('(prefers-color-scheme: dark)').matches);
+			document.documentElement.classList.toggle('dark', useDark);
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/src/styles/global.css">
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="relative z-10 text-black dark:text-white">
+			<Header id="theme-toggle" />
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root{
+		color-scheme:dark light;
+	}
+
+	body{
+		display: flex;
+		flex-direction: column;
+		
+	}
+
+	html{
+		font-family: "Onest Variable", system-ui, sans-serif ;
+	}
+</style>

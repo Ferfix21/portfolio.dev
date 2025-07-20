@@ -1,0 +1,20 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+// island: client:load
+
+<header class="flex justify-between items-center py-4 px-3 w-[1120px] mx-auto">
+    <img 
+    class="rounded-full w-12 h-12"
+    src="/src/assets/Fer-img.jpg"
+    alt="fernando foto"
+    />
+    <nav class="flex flex-row gap-x-10 opacity-90">
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
+        <ThemeToggle />
+        
+    </nav>
+</header>
+
