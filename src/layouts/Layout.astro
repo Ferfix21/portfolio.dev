@@ -16,8 +16,8 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="relative z-10 text-black dark:text-white">
-			<Header id="theme-toggle" />
+		<div>
+			<Header />
 			<slot />
 		</div>
 	</body>
@@ -25,13 +25,12 @@ const { title, description } = Astro.props;
 
 <style is:global>
 	:root{
-		color-scheme:light;
+		color-scheme: light, dark;
 	}
 
 	body{
 		display: flex;
 		flex-direction: column;
-		
 	}
 
 	html{
