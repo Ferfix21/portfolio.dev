@@ -1,5 +1,5 @@
 // tailwind.config.js
-module.exports = {
+export default {
   darkMode: 'class',
   content: [
     './src/**/*.astro',
@@ -8,5 +8,6 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: { extend: {} },
-  plugins: [],
+  plugins: [
+  ],
 }

@@ -6,9 +6,9 @@ import LinkedinIcon from '../assets/icons/Linkedin.astro';
 import GithubIcon from '../assets/icons/Github.astro';
 import MailIcon from '../assets/icons/Mail.astro';
 import SocialPill from '../components/SocialPill.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import FerImg from '../components/FerImg.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 ---
 
 <Layout 
@@ -19,7 +19,10 @@ import SocialPill from '../components/SocialPill.astro';
 	<main>
 		<div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
 
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer>
+			<div class="mb-2">
+				<FerImg />
+			</div>
 			<h1 class="text-5xl font-extrabold flex flex-row gap-x-4 pb-4">Hey, soy Fernando <div class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></div>
 			</h1>
 			<h2 class="text-2xl text-wrap"><span class="opacity-75">Estudiante de </span><span class="text-orange-600 font-semibold">Ingeniería Informática</span></span><span class="opacity-75"> con experiencia en</span><span class="text-emerald-500 font-semibold"> desarrollo web</span> <span> y</span><span class="text-cyan-500 font-semibold"> aplicaciones multiplataforma</span></span><span class="opacity-75"> a nivel junior.</span></h2>
@@ -38,7 +41,9 @@ import SocialPill from '../components/SocialPill.astro';
 					alfayefernando@gmail.com
 				</SocialPill>
 			</nav>
-
-		</section>
+		</SectionContainer>
+		<SectionContainer>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
