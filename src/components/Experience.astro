@@ -1,27 +1,26 @@
 ---
-import { BRAND } from "astro:schema";
 import ExperienceItem from "./ExperienceItem.astro";
-import { BaseSchema } from "astro:content";
-
 const EXPERIENCE = [
-  {
-    date: 'March 2022',
-    title: 'Marketing UI design in Figma',
-    description: 'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
+{
+    date: 'July 2025',
+    title: 'Astro Portfolio with Tailwind CSS',
+    description: 'A captivating personal showcase built with Astro and Tailwind CSS, featuring interactive elements, dynamic layouts, and a curated selection of my best work.',
+    link: 'https://github.com/Ferfix21/portfolio.dev',
+    moreText: 'View Project',
   },
   {
-    date: 'April 2022',
-    title: 'E-Commerce UI code in Tailwind CSS',
-    description: 'Get started with dozens of web components and interactive elements built on top of Tailwind CSS.',
+    date: 'Coming Soon',
+    title: 'Your Next Project Could Be Here',
+    description: 'Looking for a skilled developer to bring your next project to life? Let\'s collaborate and create something amazing together. Contact me to discuss your ideas and how I can help turn them into reality.',
+    link: 'mailto:alfayefernando%40gmail.com',
+    moreText: 'Contact Me',
   },
 ];
----
+---         
 <ol class="relative border-s border-gray-200 dark:border-gray-700">         
-    {
-        EXPERIENCE.map((experience) => (
-            <li class="mb-10 ms-4">
-                <ExperienceItem { ... experience} />
-            </li>
-        ))
-    }         
+    {EXPERIENCE.map((experience) => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem { ...experience} />
+        </li>
+    ))}         
 </ol>

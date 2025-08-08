@@ -1,0 +1,33 @@
+<script>
+  (() => {
+    const html = document.documentElement;
+    const theme = localStorage.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    html.classList.add(theme);
+    localStorage.theme = theme;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('theme-toggle');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+
+      const updateIcons = () => {
+        if (localStorage.theme === 'dark') {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      };
+
+      updateIcons();
+
+      btn.addEventListener('click', () => {
+        const next = localStorage.theme === 'dark' ? 'light' : 'dark';
+        html.classList.replace(localStorage.theme, next);
+        localStorage.theme = next;
+        updateIcons();
+      });
+    });
+  })();
+</script>

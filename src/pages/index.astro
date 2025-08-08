@@ -12,20 +12,36 @@ import SectionContainer from '../components/SectionContainer.astro';
 ---
 
 <Layout 
-	title="Portfolio de Fernando Alfaye - Desarrollador y Programador Fullstack Web y Multiplataforma"
-	description="Portfolio de Fernando Alfaye, Desarrollador y Programador Fullstack Web y Multiplataforma."
+	title="Fernando Alfaye's Portfolio - Fullstack Web and Multiplatform Developer and Programmer"
+	description="Portfolio of Fernando Alfaye, Fullstack Web and Multiplatform Developer and Programmer."
 	keywords="portfolio, fernando alfaye, desarrollador, programador, fullstack, web, multiplataforma, ingeniero informático"
 >
-	<main>
-		<div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
+<main>
+  <!-- light bg -->
+  <div
+    class="absolute top-0 z-[-2] h-screen w-screen
+           bg-white
+           bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]
+           transition-opacity duration-500 ease-in-out
+           opacity-100 dark:opacity-0"
+  ></div>
 
-		<SectionContainer>
+  <!-- dark bg -->
+  <div
+    class="absolute top-0 z-[-2] h-screen w-screen
+           bg-neutral-950
+           bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]
+           transition-opacity duration-500 ease-in-out
+           opacity-0 dark:opacity-100"
+  ></div>
+
+		<SectionContainer class="py-40 pb-24">
 			<div class="mb-2">
 				<FerImg />
 			</div>
-			<h1 class="text-5xl font-extrabold flex flex-row gap-x-4 pb-4">Hey, soy Fernando <div class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></div>
+			<h1 class="text-6xl font-extrabold flex flex-row gap-x-4 pb-4">Hey, i'm Fernando <div class="flex justify-center items-center"><Badge>Available for work</Badge></div>
 			</h1>
-			<h2 class="text-2xl text-wrap"><span class="opacity-75">Estudiante de </span><span class="text-orange-600 font-semibold">Ingeniería Informática</span></span><span class="opacity-75"> con experiencia en</span><span class="text-emerald-500 font-semibold"> desarrollo web</span> <span> y</span><span class="text-cyan-500 font-semibold"> aplicaciones multiplataforma</span></span><span class="opacity-75"> a nivel junior.</span></h2>
+			<h2 class="text-2xl text-wrap"><span class="opacity-75">Student of </span><span class="text-orange-600 font-semibold">Computer Engineering</span></span><span class="opacity-75"> with experience in</span><span class="text-emerald-500 font-semibold"> web development</span> <span> and</span><span class="text-cyan-500 font-semibold"> multiplatform applications</span></span><span class="opacity-75"> at junior level.</span></h2>
 
 			<nav class="flex flex-row gap-x-5 mt-5">
 				<SocialPill href="https://www.linkedin.com/in/fernandoalfaye/">
@@ -42,7 +58,8 @@ import SectionContainer from '../components/SectionContainer.astro';
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer>
+		<SectionContainer id="projects" class="py-20">
+			<h2 class="text-4xl font-bold mb-12">Personal Experience</h2>
 			<Experience />
 		</SectionContainer>
 	</main>

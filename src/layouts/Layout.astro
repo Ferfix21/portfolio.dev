@@ -1,12 +1,14 @@
 ---
 import "@fontsource-variable/onest"
+import "../styles/global.css";
 import Header from "../components/Header.astro";
+import ThemeButtonScript from "../components/ThemeButtonScript.astro";
 
 const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -14,26 +16,23 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="/src/styles/global.css">
 		<title>{title}</title>
-		<script>
-    ;(function(){
-      const html = document.documentElement;
-      const stored = localStorage.theme;
-      const osDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && osDark)) html.classList.add('dark');
-      else html.classList.remove('dark');
-    })();
-  </script>
+		<ThemeButtonScript />
 	</head>
 	<body>
 		<div>
 			<Header />
 			<slot />
 		</div>
-	</body>
+  </body>
 </html>
 
 <style is:global>
 	:root{
+		color-scheme: light dark;
+	}
+
+	html{
+		scroll-behavior: smooth;
 	}
 
 	body{
@@ -44,5 +43,11 @@ const { title, description } = Astro.props;
 
 	html{
 		font-family: "Onest Variable", system-ui, sans-serif ;
+	}
+
+	@media (prefers-reduce-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>

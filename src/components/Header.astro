@@ -1,9 +1,24 @@
-<header class="flex justify-center items-center py-4 px-3 w-[1120px] mx-auto">
-    <nav class="flex flex-row gap-x-10 opacity-90">
-        <a href="#top">Inicio</a>
-        <a href="#about">Sobre mi</a>
-        <a href="#projects">Projectos</a>
-        <a href="#contact">Contacto</a>       
-    </nav>
+---
+import Sun from "../assets/icons/Sun.astro";
+import Moon from "../assets/icons/Moon.astro";
+---
+
+<header class="flex justify-center items-center py-4 px-3 mx-auto">
+  <nav class="flex flex-row gap-x-10 opacity-90 ">
+    <a href="#top" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Home</a>
+    <a href="#projects" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Proyects</a>
+    <a href="#about" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">About me</a>
+    <a href="#contact" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Contact</a>       
+    <button
+      id="theme-toggle"
+      class="rounded-full hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500"
+    >
+      <!-- Sol (visible en light mode) -->
+      <Sun class="hidden w-6 h-6" />
+      <!-- Luna (visible en dark mode) -->
+      <Moon class="w-6 h-6"
+    </button>
+  </nav>
 </header>
+
 
