@@ -1,6 +1,7 @@
 ---
 import Sun from "../assets/icons/Sun.astro";
 import Moon from "../assets/icons/Moon.astro";
+import { socialLinks } from "../constants/socialLinks";
 ---
 
 <header class="flex justify-center items-center py-4 mx-auto w-auto text-xs xl:w-[1120px] xl:text-base">
@@ -8,7 +9,7 @@ import Moon from "../assets/icons/Moon.astro";
     <a href="#top" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Home</a>
     <a href="#projects" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Proyects</a>
     <a href="#about" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">About me</a>
-    <a href="#contact" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Contact</a>       
+    <a href={socialLinks.email} class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Contact</a>       
     <button
       id="theme-toggle"
       class="rounded-full hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500"
@@ -16,7 +17,7 @@ import Moon from "../assets/icons/Moon.astro";
       <!-- Sol (visible en light mode) -->
       <Sun class="hidden lg:w-6 lg:h-6 w-4 h-4" />
       <!-- Luna (visible en dark mode) -->
-      <Moon class="lg:w-6 lg:h-6 w-4 h-4"
+      <Moon class="lg:w-6 lg:h-6 w-4 h-4" />
     </button>
   </nav>
 </header>

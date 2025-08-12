@@ -8,12 +8,8 @@ import SocialPill from '../components/SocialPill.astro';
 import FerImg from '../components/FerImg.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-
-const socialLinks = {
-	linkedin: "https://www.linkedin.com/in/fernandoalfaye/",
-	github: "https://github.com/Ferfix21",
-	email: "mailto:alfayefernando@gmail.com"
-};
+import Footer from '../components/Footer.astro';
+import { socialLinks } from '../constants/socialLinks';
 ---
 
 <Layout 
@@ -73,6 +69,9 @@ const socialLinks = {
 			<SectionContainer id="projects" class="">
 				<h2 class="text-4xl font-bold mb-12">Personal Experience</h2>
 				<Experience />
+			</SectionContainer>
+			<SectionContainer>
+				<Footer class="pt-10" />
 			</SectionContainer>
 		</SectionContainer>
 	</main>
