@@ -1,6 +1,5 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Badge from "../components/Badge.astro"
+import Badge from "../components/Badge.astro";
 import Layout from '../layouts/Layout.astro';
 import LinkedinIcon from '../assets/icons/Linkedin.astro';
 import GithubIcon from '../assets/icons/Github.astro';
@@ -9,6 +8,12 @@ import SocialPill from '../components/SocialPill.astro';
 import FerImg from '../components/FerImg.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+
+const socialLinks = {
+	linkedin: "https://www.linkedin.com/in/fernandoalfaye/",
+	github: "https://github.com/Ferfix21",
+	email: "mailto:alfayefernando@gmail.com"
+};
 ---
 
 <Layout 
@@ -16,51 +21,59 @@ import SectionContainer from '../components/SectionContainer.astro';
 	description="Portfolio of Fernando Alfaye, Fullstack Web and Multiplatform Developer and Programmer."
 	keywords="portfolio, fernando alfaye, desarrollador, programador, fullstack, web, multiplataforma, ingeniero informático"
 >
-<main>
-  <!-- light bg -->
-  <div
-    class="absolute top-0 z-[-2] h-screen w-screen
-           bg-white
-           bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]
-           transition-opacity duration-500 ease-in-out
-           opacity-100 dark:opacity-0"
-  ></div>
+	<main>
+		<!-- light bg -->
+		<div
+			class="absolute top-0 z-[-2] h-screen w-screen
+				bg-white
+				bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]
+				transition-opacity duration-500 ease-in-out
+				opacity-100 dark:opacity-0"
+		></div>
 
-  <!-- dark bg -->
-  <div
-    class="absolute top-0 z-[-2] h-screen w-screen
-           bg-neutral-950
-           bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]
-           transition-opacity duration-500 ease-in-out
-           opacity-0 dark:opacity-100"
-  ></div>
-
-		<SectionContainer class="py-40 pb-24">
-			<div class="mb-2">
-				<FerImg />
-			</div>
-			<h1 class="text-6xl font-extrabold flex flex-row gap-x-4 pb-4">Hey, i'm Fernando <div class="flex justify-center items-center"><Badge>Available for work</Badge></div>
-			</h1>
-			<h2 class="text-2xl text-wrap"><span class="opacity-75">Student of </span><span class="text-orange-600 font-semibold">Computer Engineering</span></span><span class="opacity-75"> with experience in</span><span class="text-emerald-500 font-semibold"> web development</span> <span> and</span><span class="text-cyan-500 font-semibold"> multiplatform applications</span></span><span class="opacity-75"> at junior level.</span></h2>
-
-			<nav class="flex flex-row gap-x-5 mt-5">
-				<SocialPill href="https://www.linkedin.com/in/fernandoalfaye/">
-					<LinkedinIcon class="size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/ferfix21">
-					<GithubIcon class="size-6" />
-					GitHub
-				</SocialPill>
-				<SocialPill>
-					<MailIcon class="size-6" />
-					alfayefernando@gmail.com
-				</SocialPill>
-			</nav>
-		</SectionContainer>
-		<SectionContainer id="projects" class="py-20">
-			<h2 class="text-4xl font-bold mb-12">Personal Experience</h2>
-			<Experience />
+		<!-- dark bg -->
+		<div
+			class="absolute top-0 z-[-2] h-screen w-screen
+				bg-neutral-950
+				bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]
+				transition-opacity duration-500 ease-in-out
+				opacity-0 dark:opacity-100"
+		></div>
+		<SectionContainer class="px-4">
+			<SectionContainer class="pt-10 lg:pt-40">
+				<div class="mb-5">
+					<FerImg />
+				</div>
+				<h1 class="text-3xl lg:text-6xl font-extrabold flex flex-row gap-x-4 pb-4">Hey, i'm Fernando <div class="flex justify-center items-center"><Badge>Available for work</Badge></div>
+				</h1>
+				<h2 class="text-xl lg:text-2xl">
+					<span class="text-orange-600 font-semibold">Computer Engineering </span>
+					<span class="opacity-75">student</span>
+					<span class="opacity-75">with junior level experience in </span>
+					<span class="text-emerald-500 font-semibold">web development </span>
+					<span class="opacity-75">and </span>
+					<span class="text-cyan-500 font-semibold">cross-platform application development.</span>
+				</h2>
+	
+				<nav class="flex flex-wrap gap-x-1 gap-y-1 lg:gap-x-5 mt-5 mb-15 lg:mb-25 lg:text-base text-sm justify-center">
+					<SocialPill href={socialLinks.linkedin}>
+						<LinkedinIcon class="size-5" />
+						LinkedIn
+					</SocialPill>
+					<SocialPill href={socialLinks.github}>
+						<GithubIcon class="size-5" />
+						GitHub
+					</SocialPill>
+					<SocialPill href={socialLinks.email}>
+						<MailIcon class="size-5" />
+						alfayefernando@gmail.com
+					</SocialPill>
+				</nav>
+			</SectionContainer>
+			<SectionContainer id="projects" class="">
+				<h2 class="text-4xl font-bold mb-12">Personal Experience</h2>
+				<Experience />
+			</SectionContainer>
 		</SectionContainer>
 	</main>
 </Layout>

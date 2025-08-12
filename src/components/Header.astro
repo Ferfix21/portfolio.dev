@@ -3,7 +3,7 @@ import Sun from "../assets/icons/Sun.astro";
 import Moon from "../assets/icons/Moon.astro";
 ---
 
-<header class="flex justify-center items-center py-4 px-3 mx-auto">
+<header class="flex justify-center items-center py-4 mx-auto w-auto text-xs xl:w-[1120px] xl:text-base">
   <nav class="flex flex-row gap-x-10 opacity-90 ">
     <a href="#top" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Home</a>
     <a href="#projects" class="hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500">Proyects</a>
@@ -14,9 +14,9 @@ import Moon from "../assets/icons/Moon.astro";
       class="rounded-full hover:scale-125 transition duration-300 ease-in-out hover:text-blue-500"
     >
       <!-- Sol (visible en light mode) -->
-      <Sun class="hidden w-6 h-6" />
+      <Sun class="hidden lg:w-6 lg:h-6 w-4 h-4" />
       <!-- Luna (visible en dark mode) -->
-      <Moon class="w-6 h-6"
+      <Moon class="lg:w-6 lg:h-6 w-4 h-4"
     </button>
   </nav>
 </header>
